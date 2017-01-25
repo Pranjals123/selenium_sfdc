@@ -1,5 +1,8 @@
 package sw_test.pageobjects;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -21,7 +24,6 @@ public class ExcelConfig {
             wb = new XSSFWorkbook(fis);
             wb.getSheet(excelSheet);
             rowCount = wb.getSheet(excelSheet).getLastRowNum();
-
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -31,7 +33,11 @@ public class ExcelConfig {
     public String readData (String excelSheet, int row, int column){
 
         sheet = wb.getSheet(excelSheet);
-        String data = sheet.getRow(row).getCell(column).getStringCellValue();
-            return data;
+
+        DataFormatter formatter = new DataFormatter();
+        Cell cell = sheet.getRow(row).getCell(column);
+        String data = formatter.formatCellValue(cell);
+
+        return data;
     }
 }

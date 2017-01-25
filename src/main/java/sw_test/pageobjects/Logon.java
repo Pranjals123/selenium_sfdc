@@ -14,7 +14,7 @@ public class Logon {
     public Logon(WebDriver driver) {
         this.driver = driver;
         //User Credentials
-        driver.findElement(By.name("username")).sendKeys("automation.user@companyname.co.uk.ukdev04");
+        driver.findElement(By.name("username")).sendKeys("automation.user@examplecompany.co.uk.ukdev04");
         driver.findElement(By.name("pw")).sendKeys("8ut0M4tionUzer!");
 
         //Login and wait for the page to finish loading

@@ -52,8 +52,8 @@ public class salesforceTest {
 
 
         NewLogon = new Logon(driver);
-     //   LeadPage = NewLogon.goToLeadPage();
-     //   LeadPage.LeadProspectCreation();
+        LeadPage = NewLogon.goToLeadPage();
+        LeadPage.LeadProspectCreation();
         LeadPage = NewLogon.goToLeadPage();
         LeadPage.FullApplication();
 
