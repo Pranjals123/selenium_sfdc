@@ -57,8 +57,13 @@ public class salesforceTest {
         LeadPage = NewLogon.goToLeadPage();
         LeadPage.FullApplication();
 
+        LeadPage = NewLogon.goToLeadPage();
+                //    LeadPage.CreateTasks();
+        LeadPage.LeadConversion();
      //   AccountPage = NewLogon.goToAccountPage();
      //   AccountPage.AccountViewOptions();
         //AccountPage.AccountCreation();
+
+
         }
     }
